@@ -10,6 +10,11 @@ const chromeAndLighthouse = url => {
     return launchChrome.launch().then(chrome => {
         const options = {
             port: chrome.port,
+            output: 'html', // html로 출력
+            // chromeFlags: ['--headless'],
+            // logLevel: 'info',
+            // onlyCategories: ['performance'],
+            // view: true,
         };
         return lighthouse(url, options).then(results => {
             return chrome.kill().then(() => {
@@ -42,7 +47,7 @@ prompt.get('url', function(err, result) {
         chromeAndLighthouse(argv.url).then(results => {
             // file system에 저장하기
             fs.writeFile(
-                `${dirName}/${results.js['fetchTime'].replace(/:/g, '_')}.json`,
+                `${dirName}/${results.js['fetchTime'].replace(/:/g, '_')}.html`,
                 results.json,
                 err => {
                     if (err) throw err;
