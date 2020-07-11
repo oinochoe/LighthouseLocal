@@ -2,7 +2,7 @@
 
 ## Yon can use this in local project.
 
-## use 3 steps
+## use these steps
 
 1. execute run.bat.
 2. will be opened prompt command.
