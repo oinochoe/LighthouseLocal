@@ -1,6 +1,6 @@
 {
-    "name": "lighthouse-loacal",
-    "version": "1.0.0",
+    "name": "lighthouse-local",
+    "version": "1.0.2",
     "description": "Yon can use google lighthouse in local state.",
     "main": "lh.js",
     "dependencies": {
